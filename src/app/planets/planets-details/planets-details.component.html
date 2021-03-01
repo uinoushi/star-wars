@@ -1,0 +1,45 @@
+<ng-container *ngIf="planet">
+  <header class="module-header">
+    <h4>Planetendeatils</h4>
+    <hr />
+    <h3>{{ planet.name }}</h3>
+  </header>
+  <div class="card m--column m-b">
+    <div class="card-body m--left">
+      <div class="pad">
+        <h5 class="card-title">Details:</h5>
+        <ul class="list-unstyled m-b">
+          <li class="card-text"><strong>Type:</strong> {{ planet.terrain }}</li>
+          <li class="card-text">
+            <strong>Gravity:</strong> {{ planet.gravity }}
+          </li>
+          <li class="card-text">
+            <strong>Rotation Period:</strong> {{ planet.rotation_period }}
+          </li>
+          <li class="card-text">
+            <strong>Orbital Period:</strong> {{ planet.orbital_period }}
+          </li>
+          <li class="card-text">
+            <strong>First appearance:</strong>
+            {{ planet.created | date: "yyyy" }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="card-img">
+      <img src="assets/images/poster.jpg" class="card-img-top" alt="..." />
+    </div>
+  </div>
+  <div *ngIf="vm$ | async as vm">
+    <app-data-bank-entity-list
+      [label]="'Filme'"
+      [items]="vm.films"
+      (navigate)="navigate($event, 'movies')"
+    ></app-data-bank-entity-list>
+    <app-data-bank-entity-list
+      [label]="'Charaktere'"
+      [items]="vm.characters"
+      (navigate)="navigate($event, 'characters')"
+    ></app-data-bank-entity-list>
+  </div>
+</ng-container>

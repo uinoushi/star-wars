@@ -1,0 +1,15 @@
+/**
+ * @see README.md
+ *
+ * This file is just for importing
+ * Sass 6-1 pattern (a 7-1 pattern modified for Angular)
+ *
+**/
+
+@import 'abstracts/abstracts';
+@import 'vendors/index';
+@import 'base/base';
+@import 'themes/index';
+@import 'layout/general';
+@import 'layout/modules';
+@import 'components/index';

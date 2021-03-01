@@ -1,0 +1,38 @@
+@import "abstracts";
+
+.card-title {
+  margin: 0 0 8px;
+  font-size: 18px;
+  color: #10172c;
+  font-weight: 500;
+}
+
+.btn {
+  background-color: #efefef;
+  border-radius: 1px;
+  padding: 15px 30px;
+  border: 0;
+  font-size: 14px;
+  color: #10172c;
+  font-weight: 500;
+  margin-right: 20px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: #d6d5d5;
+  }
+}
+
+.flex-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 34px;
+
+  li {
+    margin-bottom: 20px;
+  }
+}

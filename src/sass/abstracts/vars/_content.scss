@@ -1,0 +1,19 @@
+/**
+  * Here we store the dimensions and other variables important for tha content layout
+ */
+$content-sidebar-width-expanded: 304px;
+$content-sidebar-width-collapsed: $length-base-module;
+$content-info-area-width: 400px;
+$content-module-header-height: 48px;
+
+// content blocks (panels, tab panels, accordions, etc.)
+$content-block-border: 1px solid rgba($color-black-primary, 0.25);
+$content-block-shadow: 1px 1px 23px 0 rgba(123, 128, 153, 0.1);
+$content-block-vertical-padding: 2 * $grid-gutter-size;
+$content-block-horizontal-padding: 48px;
+
+// component dimensions
+$content-component-max-width: 1280px;
+
+$footer-height-desktop: 75px;
+$footer-height-mobile: 50px;

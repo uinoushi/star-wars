@@ -1,0 +1,113 @@
+// see src/sass/abstracts/vars/_breakpoints.scss
+
+// XS: Extra Small (phone)
+
+@mixin media-xs() {
+    @media #{map-get($breakpoints, xs)} {
+        @content;
+    }
+}
+
+@mixin media-lt-xs() {
+    @media #{map-get($breakpoints, lt-xs)} {
+        @content;
+    }
+}
+
+@mixin media-gt-xs() {
+    @media #{map-get($breakpoints, gt-xs)} {
+        @content;
+    }
+}
+
+// SM: Small (larger phone, small tablet)
+
+@mixin media-sm() {
+    @media #{map-get($breakpoints, sm)} {
+        @content;
+    }
+}
+
+@mixin media-lt-sm() {
+    @media #{map-get($breakpoints, lt-sm)} {
+        @content;
+    }
+}
+
+@mixin media-gt-sm() {
+    @media #{map-get($breakpoints, gt-sm)} {
+        @content;
+    }
+}
+
+// MD: Medium (tablet)
+
+@mixin media-md() {
+    @media #{map-get($breakpoints, md)} {
+        @content;
+    }
+}
+
+@mixin media-lt-md() {
+    @media #{map-get($breakpoints, lt-md)} {
+        @content;
+    }
+}
+
+@mixin media-gt-md() {
+    @media #{map-get($breakpoints, gt-md)} {
+        @content;
+    }
+}
+
+// L: Large (large tablet, regular desktop)
+
+@mixin media-l() {
+    @media #{map-get($breakpoints, lg)} {
+        @content;
+    }
+}
+
+@mixin media-lt-l() {
+    @media #{map-get($breakpoints, lt-lg)} {
+        @content;
+    }
+}
+
+@mixin media-gt-l() {
+    @media #{map-get($breakpoints, gt-lg)} {
+        @content;
+    }
+}
+
+// XL: Extra Large (desktop) (not defined, yet)
+
+@mixin media-xl() {
+    @error "XL Breakpoint not defined, yet!";
+
+    @media #{map-get($breakpoints, xl)} {
+        @content;
+    }
+}
+
+@mixin media-lt-xl() {
+    @error "XL Breakpoint not defined, yet!";
+
+    @media #{map-get($breakpoints, lt-xl)} {
+        @content;
+    }
+}
+
+@mixin media-gt-xl() {
+    @error "XL Breakpoint not defined, yet!";
+
+    @media #{map-get($breakpoints, gt-xl)} {
+        @content;
+    }
+
+    @if 'blah' == 'blub' {
+        @error "nope";
+    } @else {
+        @error "nope";
+    }
+}

@@ -1,0 +1,54 @@
+<ng-container *ngIf="character">
+  <header class="module-header">
+    <h4>Characterdeatils</h4>
+    <hr />
+    <h3>{{ character.name }}</h3>
+  </header>
+  <div class="card m--column m-b">
+    <div class="card-body m--left">
+      <div class="pad">
+        <h5 class="card-title">Details:</h5>
+        <ul class="list-unstyled m-b">
+          <li class="card-text">
+            <strong>Größe:</strong> {{ character.height / 100 }}m
+          </li>
+          <li class="card-text">
+            <strong>Gewicht:</strong> {{ character.mass }}kg
+          </li>
+          <li class="card-text">
+            <strong>Haarfarbe:</strong>
+            {{ character.hair_color }}
+          </li>
+          <li class="card-text">
+            <strong>Augenfarbe:</strong>
+            {{ character.eye_color }}
+          </li>
+          <li class="card-text">
+            <strong>Geburtsjahr:</strong>
+            {{ character.birth_year }}
+          </li>
+          <li class="card-text">
+            <strong>Geschlecht:</strong>
+            {{ character.gender }}
+          </li>
+        </ul>
+        <p class="card-text flex-wrapper" *ngIf="homeworld">
+          <strong>Heimatplanet:</strong>
+          <button class="btn" (click)="navigate(homeworld.url, 'planets')">
+            {{ homeworld.name }}
+          </button>
+        </p>
+      </div>
+    </div>
+    <div class="card-img">
+      <img src="assets/images/poster.jpg" class="card-img-top" alt="..." />
+    </div>
+  </div>
+  <div *ngIf="vm$ | async as vm">
+    <app-data-bank-entity-list
+      [label]="'Filme'"
+      [items]="vm.films"
+      (navigate)="navigate($event, 'movies')"
+    ></app-data-bank-entity-list>
+  </div>
+</ng-container>

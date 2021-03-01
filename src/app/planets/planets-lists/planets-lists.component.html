@@ -1,0 +1,24 @@
+<header class="module-header">
+  <h3>Planeten</h3>
+</header>
+<div class="row" *ngIf="planets$ | async as planets">
+  <div
+    class="col-xs-12 col-md-6 col-lg-4 mb-2"
+    *ngFor="let planet of planets; index as index"
+  >
+    <app-card>
+      <ng-template #image><app-poster></app-poster></ng-template>
+      <ng-template #title>{{ planet.name }}</ng-template>
+      <ng-template #body>
+        <p class="card-text">Type: {{ planet.terrain }}</p>
+        <p class="card-text">Gravity: {{ planet.gravity }}</p>
+        <p class="card-text">
+          First appearance: {{ planet.created | date: "yyyy" }}
+        </p>
+        <a [routerLink]="['/planets', index + 1]" class="btn-link"
+          >More Information....</a
+        >
+      </ng-template>
+    </app-card>
+  </div>
+</div>

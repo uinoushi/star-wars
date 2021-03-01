@@ -1,0 +1,22 @@
+@import "abstracts";
+
+.m-b {
+  margin: 0 0 $length-gap-large;
+}
+
+.flex-wrapper {
+  display: flex;
+  align-items: center;
+
+  .btn {
+    margin-left: 8px;
+  }
+}
+
+@media (min-width: $breakpoint-desktop-wide) {
+  .card {
+    .pad {
+      padding-right: 150px;
+    }
+  }
+}

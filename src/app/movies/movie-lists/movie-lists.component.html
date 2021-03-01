@@ -1,0 +1,24 @@
+<header class="module-header">
+  <h3>Films</h3>
+</header>
+<div class="row" *ngIf="movies$ | async as movies">
+  <div
+    class="col-xs-12 col-md-6 col-lg-4 mb-2"
+    *ngFor="let movie of movies; index as index"
+  >
+    <app-card>
+      <ng-template #image><app-poster></app-poster></ng-template>
+      <ng-template #title>{{ movie.title }}</ng-template>
+      <ng-template #body>
+        <p class="card-text">Director: {{ movie.director }}</p>
+        <p class="card-text">Producer: {{ movie.producer }}</p>
+        <p class="card-text">
+          Release Date: {{ movie.release_date | date: "dd.MM.yyyy" }}
+        </p>
+        <a [routerLink]="['/movies', index + 1]" class="btn-link"
+          >More Information....</a
+        >
+      </ng-template>
+    </app-card>
+  </div>
+</div>

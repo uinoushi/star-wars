@@ -1,0 +1,81 @@
+<h2 class="modal-header">Charakter hinzufügen</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-field">
+        <app-form-input-text
+          [label]="'Name'"
+          [placeholder]="'Name eingeben'"
+          [formControl]="form.get('name')"
+          [error]="getNameError()"
+        ></app-form-input-text>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-field">
+        <app-form-input-text
+          [label]="'Große'"
+          [placeholder]="'Meter'"
+          [formControl]="form.get('height')"
+          [error]=""
+        ></app-form-input-text>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-field">
+        <app-form-input-text
+          [label]="'Gweicht'"
+          [placeholder]="'Kg'"
+          [formControl]="form.get('mass')"
+          [error]=""
+        ></app-form-input-text>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-field">
+        <app-form-input-text
+          [label]="'Haarfarbe'"
+          [placeholder]="'Haarfarbe eingeben'"
+          [formControl]="form.get('hair_color')"
+          [error]=""
+        ></app-form-input-text>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-field">
+        <app-form-input-select
+          [placeholder]="'Augenfarbe'"
+          [formControl]="form.get('eye_color')"
+          [options]="eyeColor"
+        ></app-form-input-select>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-field">
+        <app-form-input-text
+          [label]="'Geburtsjahr'"
+          [placeholder]="'YYYY'"
+          [formControl]="form.get('birth_year')"
+          [error]=""
+        ></app-form-input-text>
+      </div>
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div class="form-field">
+        <app-form-input-select
+          [placeholder]="'Geschlecht'"
+          [formControl]="form.get('gender')"
+          [options]="gender"
+        ></app-form-input-select>
+      </div>
+    </div>
+  </div>
+  <div class="button-group">
+    <button type="button" class="btn btn-default" (click)="close.emit($event)">
+      Abbrechen
+    </button>
+    <button type="submit" class="btn btn-primary" [disabled]="!form.valid">
+      Charakter hinzufügen
+    </button>
+  </div>
+</form>

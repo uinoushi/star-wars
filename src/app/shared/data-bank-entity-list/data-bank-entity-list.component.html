@@ -1,0 +1,13 @@
+<h5 class="card-title">{{ label }}:</h5>
+<ul class="list-unstyled flex-wrapper">
+  <li *ngFor="let item of items">
+    <button (click)="navigate.emit(item.url)" class="btn">
+      {{ item.name ? item.name : item.title }}
+    </button>
+  </li>
+  <li>
+    <button class="btn btn-modal" (click)="add.emit($event)">
+      <fa-icon [icon]="faEllipsisH"></fa-icon>
+    </button>
+  </li>
+</ul>

@@ -1,0 +1,18 @@
+<span class="ui-float-label">
+  <label class="form-label">
+    {{ label }}
+  </label>
+  <input
+    class="form-control"
+    [placeholder]="placeholder"
+    [class.input--has-error]="!!error"
+    [class.input--has-value]="!!value"
+    type="text"
+    (input)="pushChanges($event.target.value)"
+    (focus)="pushTouches()"
+    [disabled]="isDisabled || readOnly"
+    [attr.disabled]="isDisabled || readOnly ? 'disabled' : null"
+    [ngModel]="value"
+  />
+</span>
+<div *ngIf="!!error" class="error-message">{{ error }}</div>

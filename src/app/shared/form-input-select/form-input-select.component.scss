@@ -1,0 +1,27 @@
+.form-select {
+  border: 1px solid #d0d0d080;
+  background-color: #f1f1f180;
+  width: 100%;
+  font-size: 14px;
+  color: #969696;
+  padding: 15px;
+
+  &:focus,
+  &.input--has-value {
+    background-color: white;
+    color: #00305a;
+  }
+
+  &.input--has-error {
+    border-color: red;
+  }
+
+  @media (min-width: 768px) {
+    padding: 20px 24px;
+  }
+}
+
+.error-message {
+  color: red;
+  padding: 5px 0;
+}

@@ -1,0 +1,67 @@
+/**
+* Set only length measures
+* no mixins should be used for media queries
+*
+* Although we are using a design desktop first,
+* all media queries MUST have a mobile first approach.
+*
+* Prefer using min-width, and min-height over max-width or max-height.
+* Hence, the breakpoints are to be set from a min-width perspective,
+* this way, retrofitting mobile layouts are much simpler.
+*
+* At the time of writing mediaqueries are recommended to be done in pixels, not in EMs.
+* see: https://adamwathan.me/dont-use-em-for-media-queries/
+* Also pixels are easier to reason about, debug and consistently measure.
+*/
+
+/** generic horizontal breakpoint sizes. */
+$breakpoint-desktop-wide: 1440px;
+$breakpoint-desktop-normal: 1280px;
+$breakpoint-desktop-narrow: 1024px;
+$breakpoint-tablet-portrait: 768px; // based on the content we need at least 720px
+$breakpoint-tablet-narrow: 600px; // tablets (portrait) start here
+
+/** below this it´s assumed mobile. */
+// $breakpoint-mobile-large: 400px; // "phablets" start here
+// $breakpoint-mobile-medium: 360px; // bigger phones start here
+// regular phones start at 320px , no need for a media query
+
+// FIXME maybe replace our custom breakpoints with the ones below
+// Default Material Design Breakpoint definitions
+// see https://github.com/angular/flex-layout/wiki/Responsive-API
+$mat-breakpoints: (
+    xs: 'screen and (max-width: 599px)',
+    sm: 'screen and (min-width: 600px) and (max-width: 959px)',
+    md: 'screen and (min-width: 960px) and (max-width: 1279px)',
+    lg: 'screen and (min-width: 1280px) and (max-width: 1919px)',
+    xl: 'screen and (min-width: 1920px) and (max-width: 5000px)',
+    lt-sm: 'screen and (max-width: 599px)',
+    lt-md: 'screen and (max-width: 959px)',
+    lt-lg: 'screen and (max-width: 1279px)',
+    lt-xl: 'screen and (max-width: 1919px)',
+    gt-xs: 'screen and (min-width: 600px)',
+    gt-sm: 'screen and (min-width: 960px)',
+    gt-md: 'screen and (min-width: 1280px)',
+    gt-lg: 'screen and (min-width: 1920px)',
+);
+
+// apply our custom breakpoints
+// disabling indentation because of conflict between prettier and stylelint
+/* stylelint-disable indentation */
+$breakpoints: map-merge(
+    $mat-breakpoints,
+    (
+        xs: 'screen and (min-width: #{$breakpoint-tablet-narrow}) and (max-width: #{$breakpoint-tablet-portrait - 1}',
+        gt-xs: 'screen and (min-width: #{$breakpoint-tablet-narrow})',
+        sm: 'screen and (min-width: #{$breakpoint-tablet-portrait}) and (max-width: #{$breakpoint-desktop-narrow - 1}',
+        lt-sm: 'screen and (max-width: #{$breakpoint-tablet-portrait - 1})',
+        gt-sm: 'screen and (min-width: #{$breakpoint-tablet-portrait})',
+        md: 'screen and (min-width: #{$breakpoint-desktop-narrow}) and (max-width: #{$breakpoint-desktop-wide - 1}',
+        lt-md: 'screen and (max-width: #{$breakpoint-desktop-narrow - 1})',
+        gt-md: 'screen and (min-width: #{$breakpoint-desktop-narrow})',
+        lg: 'screen and (min-width: #{$breakpoint-desktop-wide})',
+        lt-lg: 'screen and (max-width: #{$breakpoint-desktop-wide - 1})',
+        gt-lg: 'screen and (min-width: #{$breakpoint-desktop-wide})',
+    )
+);
+/* stylelint-enable indentation */

@@ -1,0 +1,45 @@
+/**
+ * Plain text content styles are defined here.
+ * We wil restructure as we add rules and styles.
+ */
+
+@import "abstracts";
+
+html {
+  font-family: $font-roboto;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input,
+textarea,
+keygen,
+select,
+button {
+  outline: none;
+  font-family: inherit;
+
+  &::placeholder {
+    font-family: inherit;
+  }
+}
+
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+
+  li {
+    margin: 0;
+  }
+}

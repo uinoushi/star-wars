@@ -1,0 +1,36 @@
+@import "abstracts";
+
+.btn {
+  background-color: #efefef;
+  border-radius: 1px;
+  padding: 12px 15px;
+  border: 0;
+  font-size: 14px;
+  color: #10172c;
+  font-weight: 500;
+  margin-right: 20px;
+  min-height: 46px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+
+  &:hover {
+    background-color: #d6d5d5;
+  }
+
+  &.btn-primary {
+    background-color: #10172c;
+    color: white;
+
+    &:hover {
+      background-color: #373940;
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 15px 30px;
+  }
+}

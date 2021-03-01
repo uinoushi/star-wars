@@ -1,0 +1,31 @@
+@import "abstracts";
+
+// Because dropdown with empty value has filled state, its label is misplaced.
+// Here we set label on right polisition based on empty value and touch state.
+.ui-float-label
+  > .ui-inputwrapper-filled.input--no-value.input--not-touched
+  ~ label {
+  top: 50%;
+}
+
+.ui-dropdown {
+  width: 100%;
+
+  .ui-dropdown-label {
+    padding-top: 1px;
+    padding-bottom: 0;
+    font-weight: inherit;
+  }
+}
+
+.ui-dropdown-panel {
+  margin-top: 4px;
+  margin-left: -9px;
+  min-width: auto;
+  right: -4px;
+}
+
+.ui-dropdown-trigger-icon {
+  top: 11px;
+  font-size: 14px;
+}

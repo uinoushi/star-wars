@@ -1,0 +1,27 @@
+.card {
+  background-color: #efefef;
+  height: 100%;
+
+  .card-body {
+    padding: 24px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  ::ng-deep {
+    .btn-link {
+      font-size: 12px;
+      font-weight: 500;
+      color: #10172c;
+      display: inline-block;
+      margin-top: 20px;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

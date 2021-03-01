@@ -1,0 +1,24 @@
+<header class="module-header">
+  <h3>Characters</h3>
+</header>
+<div class="row" *ngIf="characters$ | async as characters">
+  <div
+    class="col-xs-12 col-md-6 col-lg-4 mb-2"
+    *ngFor="let character of characters; index as index"
+  >
+    <app-card>
+      <ng-template #image><app-poster></app-poster></ng-template>
+      <ng-template #title>{{ character.name }}</ng-template>
+      <ng-template #body>
+        <p class="card-text">Größe: {{ character.height / 100 }}m</p>
+        <p class="card-text">Gewicht: {{ character.mass }}kg</p>
+        <p class="card-text" *ngIf="character.birth_year">
+          Geburtsjahr: {{ character.birth_year }}
+        </p>
+        <a [routerLink]="['/characters', index + 1]" class="btn-link"
+          >Mehr Informationen....</a
+        >
+      </ng-template>
+    </app-card>
+  </div>
+</div>

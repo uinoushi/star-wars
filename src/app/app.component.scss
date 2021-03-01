@@ -1,0 +1,20 @@
+@import "abstracts";
+
+.footer {
+  padding: $length-gap-small 0;
+  background-color: white;
+  border-top: 1px solid #dbdce0;
+  height: $footer-height-mobile;
+
+  .copyright {
+    color: #bbb;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+  }
+
+  @media (min-width: $breakpoint-tablet-portrait) {
+    height: $footer-height-desktop;
+    padding: $length-gap-medium 0;
+  }
+}

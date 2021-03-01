@@ -1,0 +1,17 @@
+<span class="ui-float-label">
+  <label class="form-label">
+    {{ placeholder }}
+  </label>
+  <select
+    class="form-select"
+    [class.input--has-error]="!!error"
+    [class.input--has-value]="!!value"
+    (change)="pushChanges($event.target.value)"
+    [ngModel]="value"
+  >
+    <option [value]="option.value" *ngFor="let option of options">
+      {{ option.label }}
+    </option>
+  </select>
+</span>
+<div *ngIf="!!error" class="error-message">{{ error }}</div>

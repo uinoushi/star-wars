@@ -1,0 +1,45 @@
+// style definitions for feature modules
+.module-container {
+  .module-header {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    h3 {
+      color: #10172c;
+      font-size: 50px;
+      text-align: center;
+      line-height: 1;
+      margin: 0 0 10px;
+    }
+
+    h4 {
+      color: #10172c;
+      font-size: 18px;
+      font-weight: 100;
+      margin: 0 0 15px;
+    }
+
+    hr {
+      min-width: 60px;
+      background-color: #10172c;
+      margin: 0 0 15px;
+    }
+  }
+
+  @media (min-width: $breakpoint-tablet-portrait) {
+    .module-header {
+      min-height: 305px;
+
+      h3 {
+        font-size: 75px;
+      }
+
+      h4 {
+        font-size: 25px;
+      }
+    }
+  }
+}

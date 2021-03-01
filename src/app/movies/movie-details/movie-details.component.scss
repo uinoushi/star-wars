@@ -1,0 +1,13 @@
+@import "abstracts";
+
+.m-b {
+  margin: 0 0 $length-gap-large;
+}
+
+@media (min-width: $breakpoint-desktop-wide) {
+  .card {
+    .pad {
+      padding-right: 150px;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/**
+ * IMPORTANT: only put here only what is effectively used everywhere.
+ */
+
+@import "abstracts";
+@import "~normalize.css";
+@import "~roboto-fontface/css/roboto/roboto-fontface.css";
+@import "~flexboxgrid/dist/flexboxgrid.css";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $font-roboto;
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+// component globals, like buttons.
+@import "content/index";

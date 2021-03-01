@@ -1,0 +1,37 @@
+/**
+  * Here is our global color palette.
+  *
+  * Naming Pattern:
+  * The objective is to make code completion easier,
+  * hence, the variable name should go from generic to specific.
+  * do not declare vars for $white or $black, use the css names for that.
+  *
+ **/
+
+/**
+ Global brand colors
+ */
+$color-pale-blue: #475a9b;
+$color-orange-lead: #ff4000;
+$color-orange-light: #ff6b00;
+
+/**
+ UI colors
+ */
+$color-blue-active: #007ff5; /* Orientation Blue: HoverCurrent location indicators */
+$color-dynamic-purple: #a100fc; /* Dynamically changing items like a receiver list based on filters */
+$color-dark-blue: #369eff; // Active button elements
+$color-yellow-marker: #ffd600;
+$color-green-ok: #2ea300;
+
+$color-black-super: #12161f; /* top navigation bar */
+$color-black-primary: #262c38; /* navigation bar, icons, text, thin lines, extra thin lines */
+$color-grey-dim: #48505f;
+$color-grey-slate: #7b8099; /* Icons of top navigation bar */
+$color-grey-concrete: #b8bbcc; /* Borders or elements over gray backgrounds */
+$color-grey-lavender: #cdd1e9; /* App Tool Bar, Background of module overview, Border of form panels, App navigation */
+$color-white-cloud: #e5e8f3; /* Application background */
+$color-white-smoky: #f1f3fc;
+$color-white-ghost: #f5f7fd; /* Background of settings panel etc. */
+$color-white-ghosty: #f8faff; /* List items in app lists */
+

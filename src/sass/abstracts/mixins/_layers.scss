@@ -1,0 +1,3 @@
+@mixin cx-layer($layer, $diff: 0) {
+    z-index: map-get($z-index, $layer) + $diff;
+}

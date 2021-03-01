@@ -1,0 +1,39 @@
+<nav class="navbar">
+  <div class="wrapper">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/">
+        <img src="assets/images/logo.png" alt="star wars" />
+      </a>
+      <button class="navbar-toggler" (click)="toggleNavbar()">
+        <fa-icon [icon]="faBars" size="2x"></fa-icon>
+      </button>
+      <div class="navbar-collapse" [ngClass]="{ show: navbarOpen }">
+        <ul class="nav">
+          <li><a routerLinkActive="active" routerLink="/movies">Filme</a></li>
+          <li>
+            <a routerLinkActive="active" routerLink="/characters">Charaktere</a>
+          </li>
+          <li>
+            <a routerLinkActive="active" routerLink="/planets">Planeten</a>
+          </li>
+        </ul>
+      </div>
+      <div class="search-block">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="search"
+          (input)="search($event.target.value)"
+        />
+        <fa-icon class="search-icon" [icon]="faSearch"></fa-icon>
+        <ng-container *ngIf="films$ | async as films">
+          <ul class="dropdown">
+            <li *ngFor="let film of films" (click)="navigate(film)">
+              {{ film.title }}
+            </li>
+          </ul>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</nav>
